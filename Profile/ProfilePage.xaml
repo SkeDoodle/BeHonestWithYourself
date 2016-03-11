@@ -1,0 +1,63 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="SuperPotatoesPower.ProfilePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True" d:DesignHeight="768" d:DesignWidth="480" Loaded="PhoneApplicationPage_Loaded">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Be Honest With Yourself" Style="{StaticResource PhoneTextNormalStyle}"/>
+            <TextBlock x:Name="PageTitle" Text="Profile" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
+        </StackPanel>
+    
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="10,0,14,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="234*"/>
+                <RowDefinition Height="373*"/>
+            </Grid.RowDefinitions>
+            <TextBlock HorizontalAlignment="Left" Margin="29,136,0,0" TextWrapping="Wrap" Text="Gold :" VerticalAlignment="Top" Name="txtBlkTasks" />
+            <TextBlock x:Name="XP" Margin="188,0,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="82" HorizontalAlignment="Left" Grid.Row="1"/>
+            <ProgressBar x:Name="pgrsBrEnjoyement" Foreground="Red" HorizontalAlignment="Left" Height="27" Margin="29,106,0,0" VerticalAlignment="Top" Width="417" Value="100" Grid.Row="1"/>
+            <ProgressBar x:Name="pgrsXP" Foreground="Blue" HorizontalAlignment="Left" Height="27" Margin="29,42,0,0" VerticalAlignment="Top" Width="417" Value="50" Grid.Row="1"/>
+            <TextBlock HorizontalAlignment="Left" Margin="29,66,0,0" TextWrapping="Wrap" Text="Level : " VerticalAlignment="Top" Name="txtBlkLevel" Height="30" Width="77" RenderTransformOrigin="0.5,0.5" />
+            <TextBlock HorizontalAlignment="Left" Margin="29,74,0,0" TextWrapping="Wrap" Text="Life : " VerticalAlignment="Top" Name="txtBlkLife" Height="30" Width="77" RenderTransformOrigin="0.5,0.5" Grid.Row="1" />
+            <RichTextBox x:Name="rchTxtBxComments" HorizontalAlignment="Left" Height="153" Margin="29,141,0,0" VerticalAlignment="Top" Width="281" Grid.Row="1" BorderBrush="White">
+                <Paragraph>
+                    <!--<Run Text="Comments"/>-->
+                </Paragraph>
+                <Paragraph>
+                    <Run/>
+                </Paragraph>
+            </RichTextBox>
+            <Button Content="Reset" HorizontalAlignment="Left" Margin="46,0,0,2" VerticalAlignment="Bottom" Width="150" Grid.Row="1" Name="btnReset" Click="btnReset_Click" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="172,66,0,0" Name="txtBlkUserLevel" Text="0" VerticalAlignment="Top" Width="98" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="188,76,0,0" Name="txtBlkUserLife" Text="0" VerticalAlignment="Top" Width="98" Grid.Row="1" />
+            <TextBlock Height="27" HorizontalAlignment="Left" Margin="172,136,0,0" Name="txtBlkUserGold" Text="0" VerticalAlignment="Top" Width="98" />
+
+            <TextBlock HorizontalAlignment="Left" Margin="29,0,0,0" Name="txtBlkXP" Text="Experience : " TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="1" Width="125" />
+            <HyperlinkButton Height="114" HorizontalAlignment="Right" Margin="0,159,10,0" Name="awardBtn" VerticalAlignment="Top" Width="131" BorderBrush="White" Click="awardBtn_Click" Grid.Row="1">
+                <HyperlinkButton.Background>
+                     <ImageBrush ImageSource="/Images/StarTransparent.png" />
+                </HyperlinkButton.Background>
+            </HyperlinkButton>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>
